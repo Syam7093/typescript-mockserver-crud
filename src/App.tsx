@@ -1,24 +1,35 @@
-import React from 'react';
+import React, { createContext, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Form from './components/Form';
+import UserData from './components/UserData';
+import Navbar from './components/Navbar';
+import Crud from './components/Crud';
+
+interface some{
+  one:string[],
+  setone:React.Dispatch<React.SetStateAction<string[]>>
+
+}
+
+export const usesContext=createContext<some>({one:[],setone:()=>{}})
 
 function App() {
+  const [one,setone]=useState<string[]>([])
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+      <Navbar></Navbar>
+      <usesContext.Provider value={{one,setone}}>
+      <Routes>
+        <Route path="/" element={<Form></Form>}></Route>
+        <Route path="/us" element={<UserData ></UserData>}></Route>
+        <Route path="/crud" element={<Crud></Crud>}></Route>
+      </Routes>
+      </usesContext.Provider>
+      </BrowserRouter>
     </div>
   );
 }
