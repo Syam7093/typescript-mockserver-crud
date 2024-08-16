@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { deleteuser, getuserdata, submitUserData, updatesomeuser } from '../service/apisServie'
 import "../App.css"
+import { useDispatch, useSelector } from 'react-redux'
+import { setNumberd } from '../slices/numberIncrement'
 
 interface allstate{
     id:string,
@@ -8,6 +10,13 @@ interface allstate{
     email:string,
     password:string,
    
+}
+
+interface hellone{
+    reusable:{
+        number:number
+    }
+
 }
 
 
@@ -80,8 +89,22 @@ const Crud = () => {
         // console.log(data);
     }
     }
+
+
+
+    const dispatch=useDispatch()
+    const select=useSelector((state:hellone)=>state.reusable.number)
+    
   return (
     <div>
+        <button onClick={()=>{
+           dispatch(setNumberd(false))
+        }}>dec</button>
+        <h1>{select}</h1>
+        <button onClick={()=>{
+ dispatch(setNumberd(true))
+        }}>inc</button>
+
         <div>
             <div>
                 <label>name</label>

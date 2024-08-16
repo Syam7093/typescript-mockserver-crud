@@ -22,4 +22,5 @@ return data
 
 export const updatesomeuser=async(id:string,user:userdata)=>{
  let data=await axios.put(`http://localhost:2323/users/${id}`,user)
+ return data
 }
