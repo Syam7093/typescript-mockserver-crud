@@ -1,9 +1,18 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { usesContext } from '../App';
+import axios from 'axios';
+
+
+interface helloone{
+  image:string,
+  title:string
+}
 
 const UserData = () => {
   const [main, setmain] = useState('PRAVEEN---');
   const { one, setone } = useContext(usesContext);
+  const [dis,setdis]=useState<helloone[]>([])
+  const [search,setarach]=useState("")
 
   const [show,setshow]=useState<any>([])
   const handleDelte=(m:string)=>{
@@ -14,6 +23,17 @@ const UserData = () => {
     setshow(data)
 
   }
+  useEffect(()=>{
+    ssomting()
+  },[])
+
+  const ssomting=async()=>{
+    let data=await axios.get("https://fakestoreapi.com/products")
+    setdis(data.data)
+  }
+  const filterdata=dis.filter((e)=>{
+    return e.title.toLowerCase().includes(search.toLowerCase())
+  })
 
   return (
     <div>
@@ -46,6 +66,17 @@ const UserData = () => {
             )
           })
         }
+      </div>
+      <input type="text" onChange={(e)=>{setarach(e.target.value)}}></input>
+      <div>
+        {filterdata.map((e)=>{
+          return(
+            <div>
+              <img src={e.image} height="50px" width="50px"></img>
+              <h4>{e.title}</h4>
+            </div>
+          )
+        })}
       </div>
     </div>
   );
