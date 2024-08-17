@@ -7,6 +7,8 @@ import UserData from './components/UserData';
 import Navbar from './components/Navbar';
 import Crud from './components/Crud';
 
+import BasicCrud from './components/BasicCrud';
+
 interface some{
   one:string[],
   setone:React.Dispatch<React.SetStateAction<string[]>>
@@ -27,6 +29,8 @@ function App() {
         <Route path="/" element={<Form></Form>}></Route>
         <Route path="/us" element={<UserData ></UserData>}></Route>
         <Route path="/crud" element={<Crud></Crud>}></Route>
+        <Route path="/basicCrud" element={<BasicCrud></BasicCrud>}></Route>
+
       </Routes>
       </usesContext.Provider>
       </BrowserRouter>

@@ -10,6 +10,16 @@ table,tr,th,td{
   height: 40vmin;
   pointer-events: none;
 }
+.star {
+  color: green;
+  font-weight: bold;
+}
+
+.dual {
+  text-shadow: 2px 2px 0 #000, -2px -2px 0 #000; /* Dual effect */
+  font-family: monospace;
+}
+
 a{
   text-decoration:none;
   margin:30px;
