@@ -8,6 +8,8 @@ import Navbar from './components/Navbar';
 import Crud from './components/Crud';
 
 import BasicCrud from './components/BasicCrud';
+import SelectTable from './components/SelectTable';
+import FilterTable from './components/FilterTable';
 
 interface some{
   one:string[],
@@ -30,6 +32,10 @@ function App() {
         <Route path="/us" element={<UserData ></UserData>}></Route>
         <Route path="/crud" element={<Crud></Crud>}></Route>
         <Route path="/basicCrud" element={<BasicCrud></BasicCrud>}></Route>
+        <Route path="/select" element={<SelectTable/>}></Route>
+        <Route path="/filter" element={<FilterTable/>}></Route>
+
+
 
       </Routes>
       </usesContext.Provider>

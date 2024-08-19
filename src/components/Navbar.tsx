@@ -9,6 +9,10 @@ const Navbar = () => {
         <Link to="/us">userdata</Link>
         <Link to="/crud">crud</Link>
         <Link to="/basicCrud">janu</Link>
+        <Link to="/select">Select table</Link>
+        <Link to="/filter">Filter table</Link>
+
+
 
 
 
