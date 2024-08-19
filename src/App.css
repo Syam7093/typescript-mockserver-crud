@@ -5,6 +5,49 @@ table,tr,th,td{
   border: 2px solid black;
   border-collapse: collapse;
 }
+.filter-table-container {
+  margin: 20px;
+}
+
+/* .input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+} */
+
+.input-item  {
+  display: flex;
+  align-items: center; 
+   margin-bottom: 10px; 
+}
+
+.input-item label {
+  width: 500px; /* Fixed width for labels */
+  margin-right: 10px;
+   font-weight: bold;
+}
+
+
+
+.filter-select {
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+th {
+  background-color: #f4f4f4;
+}
+
 
 .App-logo {
   height: 40vmin;
@@ -25,6 +68,19 @@ a{
   margin:30px;
   /* background-color: green; */
   color:white
+}
+.inputs{
+  display: flex;
+  margin-bottom:10px;
+  background-color:red;
+}
+.inputs label{
+  width: 100px;
+  text-align: left;
+  font-weight:bold;
+}
+label{
+  
 }
 
 @media (prefers-reduced-motion: no-preference) {

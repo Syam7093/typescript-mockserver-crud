@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import "../App.css"
 
 const FilterTable = () => {
     const [data,setdata]=useState([
@@ -15,7 +16,17 @@ const FilterTable = () => {
         return e.gender=="male"
     }):data
   return (
-    <div>
+    <div className="filter-table-container">
+        <div className="input-group">
+            <div className="input-item">
+                <label>Name</label>
+                <input type="text"></input>
+            </div>
+            <div className="input-item">
+                <label>Email</label>
+                <input type="text"></input>
+            </div>
+        </div>
         <select onChange={(e)=>{setgendrs(e.target.value)}}>
             <option>male</option>
             <option>female</option>

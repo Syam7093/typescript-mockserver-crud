@@ -81,6 +81,20 @@ const SelectTable = () => {
                 })}
             </table>
         </div>
+        <div style={{display:"flex",flexDirection:"column",justifyContent:'center',alignItems:"center",marginTop:"30px",backgroundColor:'green'}}>
+            <div className="inputs">
+                <label>Name</label>
+                <input type="text"></input>
+            </div>
+            <div className="inputs">
+                <label>Email</label>
+                <input type="text"></input>
+            </div>
+            <div className="inputs">
+                <label>password</label>
+                <input type="text"></input>
+            </div>
+        </div>
     </div>
   )
 }
